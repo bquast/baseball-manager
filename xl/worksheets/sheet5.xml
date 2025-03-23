@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+           xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <dimension ref="A1:E9"/>
+  <sheetViews>
+    <sheetView workbookViewId="0"/>
+  </sheetViews>
+  <sheetFormatPr defaultRowHeight="15"/>
+  <sheetData>
+    <row r="1">
+      <c r="A1" t="inlineStr"><is><t>Team</t></is></c>
+      <c r="B1" t="inlineStr"><is><t>W</t></is></c>
+      <c r="C1" t="inlineStr"><is><t>L</t></is></c>
+      <c r="D1" t="inlineStr"><is><t>Runs</t></is></c>
+      <c r="E1" t="inlineStr"><is><t>Allowed</t></is></c>
+    </row>
+
+    <!-- We'll just reference the Teams sheet: -->
+    <row r="2">
+      <c r="A2"><f>Teams!A2</f></c>
+      <c r="B2"><f>Teams!C2</f></c>
+      <c r="C2"><f>Teams!D2</f></c>
+      <c r="D2"><f>Teams!E2</f></c>
+      <c r="E2"><f>Teams!F2</f></c>
+    </row>
+    <row r="3">
+      <c r="A3"><f>Teams!A3</f></c>
+      <c r="B3"><f>Teams!C3</f></c>
+      <c r="C3"><f>Teams!D3</f></c>
+      <c r="D3"><f>Teams!E3</f></c>
+      <c r="E3"><f>Teams!F3</f></c>
+    </row>
+    <row r="4">
+      <c r="A4"><f>Teams!A4</f></c>
+      <c r="B4"><f>Teams!C4</f></c>
+      <c r="C4"><f>Teams!D4</f></c>
+      <c r="D4"><f>Teams!E4</f></c>
+      <c r="E4"><f>Teams!F4</f></c>
+    </row>
+    <row r="5">
+      <c r="A5"><f>Teams!A5</f></c>
+      <c r="B5"><f>Teams!C5</f></c>
+      <c r="C5"><f>Teams!D5</f></c>
+      <c r="D5"><f>Teams!E5</f></c>
+      <c r="E5"><f>Teams!F5</f></c>
+    </row>
+    <row r="6">
+      <c r="A6"><f>Teams!A6</f></c>
+      <c r="B6"><f>Teams!C6</f></c>
+      <c r="C6"><f>Teams!D6</f></c>
+      <c r="D6"><f>Teams!E6</f></c>
+      <c r="E6"><f>Teams!F6</f></c>
+    </row>
+    <row r="7">
+      <c r="A7"><f>Teams!A7</f></c>
+      <c r="B7"><f>Teams!C7</f></c>
+      <c r="C7"><f>Teams!D7</f></c>
+      <c r="D7"><f>Teams!E7</f></c>
+      <c r="E7"><f>Teams!F7</f></c>
+    </row>
+    <row r="8">
+      <c r="A8"><f>Teams!A8</f></c>
+      <c r="B8"><f>Teams!C8</f></c>
+      <c r="C8"><f>Teams!D8</f></c>
+      <c r="D8"><f>Teams!E8</f></c>
+      <c r="E8"><f>Teams!F8</f></c>
+    </row>
+    <row r="9">
+      <c r="A9"><f>Teams!A9</f></c>
+      <c r="B9"><f>Teams!C9</f></c>
+      <c r="C9"><f>Teams!D9</f></c>
+      <c r="D9"><f>Teams!E9</f></c>
+      <c r="E9"><f>Teams!F9</f></c>
+    </row>
+  </sheetData>
+  <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>
+</worksheet>

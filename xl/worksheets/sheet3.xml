@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+           xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <dimension ref="A1:H33"/>
+  <sheetViews>
+    <sheetView workbookViewId="0"/>
+  </sheetViews>
+  <sheetFormatPr defaultRowHeight="15"/>
+  <sheetData>
+    <!-- Header Row -->
+    <row r="1">
+      <c r="A1" t="inlineStr"><is><t>PlayerID</t></is></c>
+      <c r="B1" t="inlineStr"><is><t>Name</t></is></c>
+      <c r="C1" t="inlineStr"><is><t>Team</t></is></c>
+      <c r="D1" t="inlineStr"><is><t>OffRating</t></is></c>
+      <c r="E1" t="inlineStr"><is><t>DefRating</t></is></c>
+      <c r="F1" t="inlineStr"><is><t>Salary</t></is></c>
+      <c r="G1" t="inlineStr"><is><t>InjuryDays</t></is></c>
+      <c r="H1" t="inlineStr"><is><t>IsHealthy</t></is></c>
+    </row>
+
+    <!-- We create 4 players per team, 8 teams = 32 players. Simplify naming. -->
+    <!-- Team Alpha (A2..A5) -->
+    <row r="2">
+      <c r="A2"><v>1</v></c>
+      <c r="B2" t="inlineStr"><is><t>Alpha-P1</t></is></c>
+      <c r="C2" t="inlineStr"><is><t>Alpha</t></is></c>
+      <c r="D2"><v>70</v></c>
+      <c r="E2"><v>60</v></c>
+      <c r="F2"><v>8000</v></c>
+      <c r="G2">
+        <!-- 5% daily chance of being injured for 1-5 days (demo) -->
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H2">
+        <!-- 1 if healthy, 0 if injured -->
+        <f>IF(G2&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="3">
+      <c r="A3"><v>2</v></c>
+      <c r="B3" t="inlineStr"><is><t>Alpha-P2</t></is></c>
+      <c r="C3" t="inlineStr"><is><t>Alpha</t></is></c>
+      <c r="D3"><v>65</v></c>
+      <c r="E3"><v>55</v></c>
+      <c r="F3"><v>7500</v></c>
+      <c r="G3">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H3">
+        <f>IF(G3&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="4">
+      <c r="A4"><v>3</v></c>
+      <c r="B4" t="inlineStr"><is><t>Alpha-P3</t></is></c>
+      <c r="C4" t="inlineStr"><is><t>Alpha</t></is></c>
+      <c r="D4"><v>60</v></c>
+      <c r="E4"><v>70</v></c>
+      <c r="F4"><v>7000</v></c>
+      <c r="G4">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H4">
+        <f>IF(G4&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="5">
+      <c r="A5"><v>4</v></c>
+      <c r="B5" t="inlineStr"><is><t>Alpha-P4</t></is></c>
+      <c r="C5" t="inlineStr"><is><t>Alpha</t></is></c>
+      <c r="D5"><v>75</v></c>
+      <c r="E5"><v>50</v></c>
+      <c r="F5"><v>9000</v></c>
+      <c r="G5">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H5">
+        <f>IF(G5&gt;0,0,1)</f>
+      </c>
+    </row>
+
+    <!-- Team Bravo (A6..A9) -->
+    <row r="6">
+      <c r="A6"><v>5</v></c>
+      <c r="B6" t="inlineStr"><is><t>Bravo-P1</t></is></c>
+      <c r="C6" t="inlineStr"><is><t>Bravo</t></is></c>
+      <c r="D6"><v>73</v></c>
+      <c r="E6"><v>68</v></c>
+      <c r="F6"><v>8500</v></c>
+      <c r="G6">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H6">
+        <f>IF(G6&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="7">
+      <c r="A7"><v>6</v></c>
+      <c r="B7" t="inlineStr"><is><t>Bravo-P2</t></is></c>
+      <c r="C7" t="inlineStr"><is><t>Bravo</t></is></c>
+      <c r="D7"><v>78</v></c>
+      <c r="E7"><v>60</v></c>
+      <c r="F7"><v>9500</v></c>
+      <c r="G7">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H7">
+        <f>IF(G7&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="8">
+      <c r="A8"><v>7</v></c>
+      <c r="B8" t="inlineStr"><is><t>Bravo-P3</t></is></c>
+      <c r="C8" t="inlineStr"><is><t>Bravo</t></is></c>
+      <c r="D8"><v>80</v></c>
+      <c r="E8"><v>62</v></c>
+      <c r="F8"><v>10000</v></c>
+      <c r="G8">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H8">
+        <f>IF(G8&gt;0,0,1)</f>
+      </c>
+    </row>
+    <row r="9">
+      <c r="A9"><v>8</v></c>
+      <c r="B9" t="inlineStr"><is><t>Bravo-P4</t></is></c>
+      <c r="C9" t="inlineStr"><is><t>Bravo</t></is></c>
+      <c r="D9"><v>60</v></c>
+      <c r="E9"><v>70</v></c>
+      <c r="F9"><v>6500</v></c>
+      <c r="G9">
+        <f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f>
+      </c>
+      <c r="H9">
+        <f>IF(G9&gt;0,0,1)</f>
+      </c>
+    </row>
+
+    <!-- Team Charlie (A10..A13) -->
+    <row r="10">
+      <c r="A10"><v>9</v></c>
+      <c r="B10" t="inlineStr"><is><t>Charlie-P1</t></is></c>
+      <c r="C10" t="inlineStr"><is><t>Charlie</t></is></c>
+      <c r="D10"><v>66</v></c>
+      <c r="E10"><v>64</v></c>
+      <c r="F10"><v>7000</v></c>
+      <c r="G10"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H10"><f>IF(G10&gt;0,0,1)</f></c>
+    </row>
+    <row r="11">
+      <c r="A11"><v>10</v></c>
+      <c r="B11" t="inlineStr"><is><t>Charlie-P2</t></is></c>
+      <c r="C11" t="inlineStr"><is><t>Charlie</t></is></c>
+      <c r="D11"><v>70</v></c>
+      <c r="E11"><v>63</v></c>
+      <c r="F11"><v>7500</v></c>
+      <c r="G11"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H11"><f>IF(G11&gt;0,0,1)</f></c>
+    </row>
+    <row r="12">
+      <c r="A12"><v>11</v></c>
+      <c r="B12" t="inlineStr"><is><t>Charlie-P3</t></is></c>
+      <c r="C12" t="inlineStr"><is><t>Charlie</t></is></c>
+      <c r="D12"><v>65</v></c>
+      <c r="E12"><v>70</v></c>
+      <c r="F12"><v>6000</v></c>
+      <c r="G12"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H12"><f>IF(G12&gt;0,0,1)</f></c>
+    </row>
+    <row r="13">
+      <c r="A13"><v>12</v></c>
+      <c r="B13" t="inlineStr"><is><t>Charlie-P4</t></is></c>
+      <c r="C13" t="inlineStr"><is><t>Charlie</t></is></c>
+      <c r="D13"><v>68</v></c>
+      <c r="E13"><v>65</v></c>
+      <c r="F13"><v>6200</v></c>
+      <c r="G13"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H13"><f>IF(G13&gt;0,0,1)</f></c>
+    </row>
+
+    <!-- Team Delta (A14..A17) -->
+    <row r="14">
+      <c r="A14"><v>13</v></c>
+      <c r="B14" t="inlineStr"><is><t>Delta-P1</t></is></c>
+      <c r="C14" t="inlineStr"><is><t>Delta</t></is></c>
+      <c r="D14"><v>80</v></c>
+      <c r="E14"><v>85</v></c>
+      <c r="F14"><v>10000</v></c>
+      <c r="G14"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H14"><f>IF(G14&gt;0,0,1)</f></c>
+    </row>
+    <row r="15">
+      <c r="A15"><v>14</v></c>
+      <c r="B15" t="inlineStr"><is><t>Delta-P2</t></is></c>
+      <c r="C15" t="inlineStr"><is><t>Delta</t></is></c>
+      <c r="D15"><v>82</v></c>
+      <c r="E15"><v>80</v></c>
+      <c r="F15"><v>11000</v></c>
+      <c r="G15"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H15"><f>IF(G15&gt;0,0,1)</f></c>
+    </row>
+    <row r="16">
+      <c r="A16"><v>15</v></c>
+      <c r="B16" t="inlineStr"><is><t>Delta-P3</t></is></c>
+      <c r="C16" t="inlineStr"><is><t>Delta</t></is></c>
+      <c r="D16"><v>78</v></c>
+      <c r="E16"><v>75</v></c>
+      <c r="F16"><v>9000</v></c>
+      <c r="G16"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H16"><f>IF(G16&gt;0,0,1)</f></c>
+    </row>
+    <row r="17">
+      <c r="A17"><v>16</v></c>
+      <c r="B17" t="inlineStr"><is><t>Delta-P4</t></is></c>
+      <c r="C17" t="inlineStr"><is><t>Delta</t></is></c>
+      <c r="D17"><v>70</v></c>
+      <c r="E17"><v>72</v></c>
+      <c r="F17"><v>7500</v></c>
+      <c r="G17"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H17"><f>IF(G17&gt;0,0,1)</f></c>
+    </row>
+
+    <!-- Team Echo (A18..A21) -->
+    <row r="18">
+      <c r="A18"><v>17</v></c>
+      <c r="B18" t="inlineStr"><is><t>Echo-P1</t></is></c>
+      <c r="C18" t="inlineStr"><is><t>Echo</t></is></c>
+      <c r="D18"><v>58</v></c>
+      <c r="E18"><v>60</v></c>
+      <c r="F18"><v>6000</v></c>
+      <c r="G18"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H18"><f>IF(G18&gt;0,0,1)</f></c>
+    </row>
+    <row r="19">
+      <c r="A19"><v>18</v></c>
+      <c r="B19" t="inlineStr"><is><t>Echo-P2</t></is></c>
+      <c r="C19" t="inlineStr"><is><t>Echo</t></is></c>
+      <c r="D19"><v>62</v></c>
+      <c r="E19"><v>61</v></c>
+      <c r="F19"><v>6200</v></c>
+      <c r="G19"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H19"><f>IF(G19&gt;0,0,1)</f></c>
+    </row>
+    <row r="20">
+      <c r="A20"><v>19</v></c>
+      <c r="B20" t="inlineStr"><is><t>Echo-P3</t></is></c>
+      <c r="C20" t="inlineStr"><is><t>Echo</t></is></c>
+      <c r="D20"><v>60</v></c>
+      <c r="E20"><v>58</v></c>
+      <c r="F20"><v>5500</v></c>
+      <c r="G20"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H20"><f>IF(G20&gt;0,0,1)</f></c>
+    </row>
+    <row r="21">
+      <c r="A21"><v>20</v></c>
+      <c r="B21" t="inlineStr"><is><t>Echo-P4</t></is></c>
+      <c r="C21" t="inlineStr"><is><t>Echo</t></is></c>
+      <c r="D21"><v>65</v></c>
+      <c r="E21"><v>66</v></c>
+      <c r="F21"><v>7000</v></c>
+      <c r="G21"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H21"><f>IF(G21&gt;0,0,1)</f></c>
+    </row>
+
+    <!-- Team Foxtrot (A22..A25) -->
+    <row r="22">
+      <c r="A22"><v>21</v></c>
+      <c r="B22" t="inlineStr"><is><t>Foxtrot-P1</t></is></c>
+      <c r="C22" t="inlineStr"><is><t>Foxtrot</t></is></c>
+      <c r="D22"><v>68</v></c>
+      <c r="E22"><v>70</v></c>
+      <c r="F22"><v>7500</v></c>
+      <c r="G22"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H22"><f>IF(G22&gt;0,0,1)</f></c>
+    </row>
+    <row r="23">
+      <c r="A23"><v>22</v></c>
+      <c r="B23" t="inlineStr"><is><t>Foxtrot-P2</t></is></c>
+      <c r="C23" t="inlineStr"><is><t>Foxtrot</t></is></c>
+      <c r="D23"><v>72</v></c>
+      <c r="E23"><v>68</v></c>
+      <c r="F23"><v>8400</v></c>
+      <c r="G23"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H23"><f>IF(G23&gt;0,0,1)</f></c>
+    </row>
+    <row r="24">
+      <c r="A24"><v>23</v></c>
+      <c r="B24" t="inlineStr"><is><t>Foxtrot-P3</t></is></c>
+      <c r="C24" t="inlineStr"><is><t>Foxtrot</t></is></c>
+      <c r="D24"><v>75</v></c>
+      <c r="E24"><v>64</v></c>
+      <c r="F24"><v>9000</v></c>
+      <c r="G24"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H24"><f>IF(G24&gt;0,0,1)</f></c>
+    </row>
+    <row r="25">
+      <c r="A25"><v>24</v></c>
+      <c r="B25" t="inlineStr"><is><t>Foxtrot-P4</t></is></c>
+      <c r="C25" t="inlineStr"><is><t>Foxtrot</t></is></c>
+      <c r="D25"><v>65</v></c>
+      <c r="E25"><v>65</v></c>
+      <c r="F25"><v>7000</v></c>
+      <c r="G25"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H25"><f>IF(G25&gt;0,0,1)</f></c>
+    </row>
+
+    <!-- Team Golf (A26..A29) -->
+    <row r="26">
+      <c r="A26"><v>25</v></c>
+      <c r="B26" t="inlineStr"><is><t>Golf-P1</t></is></c>
+      <c r="C26" t="inlineStr"><is><t>Golf</t></is></c>
+      <c r="D26"><v>78</v></c>
+      <c r="E26"><v>74</v></c>
+      <c r="F26"><v>9000</v></c>
+      <c r="G26"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H26"><f>IF(G26&gt;0,0,1)</f></c>
+    </row>
+    <row r="27">
+      <c r="A27"><v>26</v></c>
+      <c r="B27" t="inlineStr"><is><t>Golf-P2</t></is></c>
+      <c r="C27" t="inlineStr"><is><t>Golf</t></is></c>
+      <c r="D27"><v>82</v></c>
+      <c r="E27"><v>78</v></c>
+      <c r="F27"><v>9500</v></c>
+      <c r="G27"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H27"><f>IF(G27&gt;0,0,1)</f></c>
+    </row>
+    <row r="28">
+      <c r="A28"><v>27</v></c>
+      <c r="B28" t="inlineStr"><is><t>Golf-P3</t></is></c>
+      <c r="C28" t="inlineStr"><is><t>Golf</t></is></c>
+      <c r="D28"><v>75</v></c>
+      <c r="E28"><v>70</v></c>
+      <c r="F28"><v>8500</v></c>
+      <c r="G28"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H28"><f>IF(G28&gt;0,0,1)</f></c>
+    </row>
+    <row r="29">
+      <c r="A29"><v>28</v></c>
+      <c r="B29" t="inlineStr"><is><t>Golf-P4</t></is></c>
+      <c r="C29" t="inlineStr"><is><t>Golf</t></is></c>
+      <c r="D29"><v>70</v></c>
+      <c r="E29"><v>68</v></c>
+      <c r="F29"><v>7000</v></c>
+      <c r="G29"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H29"><f>IF(G29&gt;0,0,1)</f></c>
+    </row>
+
+    <!-- Team Hotel (A30..A33) -->
+    <row r="30">
+      <c r="A30"><v>29</v></c>
+      <c r="B30" t="inlineStr"><is><t>Hotel-P1</t></is></c>
+      <c r="C30" t="inlineStr"><is><t>Hotel</t></is></c>
+      <c r="D30"><v>88</v></c>
+      <c r="E30"><v>82</v></c>
+      <c r="F30"><v>11000</v></c>
+      <c r="G30"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H30"><f>IF(G30&gt;0,0,1)</f></c>
+    </row>
+    <row r="31">
+      <c r="A31"><v>30</v></c>
+      <c r="B31" t="inlineStr"><is><t>Hotel-P2</t></is></c>
+      <c r="C31" t="inlineStr"><is><t>Hotel</t></is></c>
+      <c r="D31"><v>85</v></c>
+      <c r="E31"><v>80</v></c>
+      <c r="F31"><v>10000</v></c>
+      <c r="G31"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H31"><f>IF(G31&gt;0,0,1)</f></c>
+    </row>
+    <row r="32">
+      <c r="A32"><v>31</v></c>
+      <c r="B32" t="inlineStr"><is><t>Hotel-P3</t></is></c>
+      <c r="C32" t="inlineStr"><is><t>Hotel</t></is></c>
+      <c r="D32"><v>80</v></c>
+      <c r="E32"><v>78</v></c>
+      <c r="F32"><v>9000</v></c>
+      <c r="G32"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H32"><f>IF(G32&gt;0,0,1)</f></c>
+    </row>
+    <row r="33">
+      <c r="A33"><v>32</v></c>
+      <c r="B33" t="inlineStr"><is><t>Hotel-P4</t></is></c>
+      <c r="C33" t="inlineStr"><is><t>Hotel</t></is></c>
+      <c r="D33"><v>82</v></c>
+      <c r="E33"><v>80</v></c>
+      <c r="F33"><v>9500</v></c>
+      <c r="G33"><f>IF(RAND()&lt;0.05,RANDBETWEEN(1,5),0)</f></c>
+      <c r="H33"><f>IF(G33&gt;0,0,1)</f></c>
+    </row>
+  </sheetData>
+  <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>
+</worksheet>

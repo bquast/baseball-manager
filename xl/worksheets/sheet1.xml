@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+           xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <dimension ref="A1:B6"/>
+  <sheetViews>
+    <sheetView tabSelected="1" workbookViewId="0"/>
+  </sheetViews>
+  <sheetFormatPr defaultRowHeight="15"/>
+  <sheetData>
+    <row r="1">
+      <c r="A1" t="inlineStr">
+        <is><t>Welcome to the Extended OOTP-Style Excel Manager</t></is>
+      </c>
+    </row>
+    <row r="2">
+      <c r="A2" t="inlineStr">
+        <is><t>Instructions:</t></is>
+      </c>
+      <c r="B2" t="inlineStr">
+        <is>
+          <t>
+            1) Set Current Day (B3) to move forward. 
+            2) Schedule results appear automatically. 
+            3) Edit teams/players for trades, rating changes, etc.
+          </t>
+        </is>
+      </c>
+    </row>
+    <row r="3">
+      <c r="A3" t="inlineStr">
+        <is><t>Current Day:</t></is>
+      </c>
+      <!-- The user changes this value to simulate progression -->
+      <c r="B3">
+        <v>1</v>
+      </c>
+    </row>
+    <row r="4">
+      <c r="A4" t="inlineStr">
+        <is><t>Note:</t></is>
+      </c>
+      <c r="B4" t="inlineStr">
+        <is><t>Random calculations reset on every Recalc (F9).</t></is>
+      </c>
+    </row>
+    <row r="5">
+      <c r="A5" t="inlineStr">
+        <is><t>Tip:</t></is>
+      </c>
+      <c r="B5" t="inlineStr">
+        <is>
+          <t>
+            Expand # of days/games/teams/players in Schedule, Teams, and Players sheets. 
+            Re-save as needed.
+          </t>
+        </is>
+      </c>
+    </row>
+    <row r="6">
+      <c r="A6" t="inlineStr">
+        <is><t>Have fun!</t></is>
+      </c>
+    </row>
+  </sheetData>
+  <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>
+</worksheet>

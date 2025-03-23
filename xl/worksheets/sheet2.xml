@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+           xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <dimension ref="A1:H9"/>
+  <sheetViews>
+    <sheetView workbookViewId="0"/>
+  </sheetViews>
+  <sheetFormatPr defaultRowHeight="15"/>
+  <sheetData>
+    <!-- Header Row -->
+    <row r="1">
+      <c r="A1" t="inlineStr"><is><t>Team Name</t></is></c>
+      <c r="B1" t="inlineStr"><is><t>Base Rating</t></is></c>
+      <c r="C1" t="inlineStr"><is><t>Wins</t></is></c>
+      <c r="D1" t="inlineStr"><is><t>Losses</t></is></c>
+      <c r="E1" t="inlineStr"><is><t>Runs Scored</t></is></c>
+      <c r="F1" t="inlineStr"><is><t>Runs Allowed</t></is></c>
+      <c r="G1" t="inlineStr"><is><t>Budget</t></is></c>
+      <c r="H1" t="inlineStr"><is><t>Remaining Budget</t></is></c>
+    </row>
+
+    <!-- 8 Teams: Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel -->
+    <row r="2">
+      <c r="A2" t="inlineStr"><is><t>Alpha</t></is></c>
+      <c r="B2"><v>75</v></c>
+      <!-- Wins -->
+      <c r="C2"><f>COUNTIF(Schedule!$G:$G,A2)</f></c>
+      <!-- Losses -->
+      <c r="D2"><f>COUNTIF(Schedule!$H:$H,A2)</f></c>
+      <!-- Runs Scored -->
+      <c r="E2"><f>SUMIF(Schedule!$B:$B,A2,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A2,Schedule!$F:$F)</f></c>
+      <!-- Runs Allowed -->
+      <c r="F2"><f>SUMIF(Schedule!$B:$B,A2,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A2,Schedule!$E:$E)</f></c>
+      <c r="G2"><v>50000</v></c>
+      <c r="H2">
+        <!-- Fake formula to show budget minus total player salaries (Players!F) -->
+        <f>G2 - SUMIF(Players!$C:$C,A2,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="3">
+      <c r="A3" t="inlineStr"><is><t>Bravo</t></is></c>
+      <c r="B3"><v>80</v></c>
+      <c r="C3"><f>COUNTIF(Schedule!$G:$G,A3)</f></c>
+      <c r="D3"><f>COUNTIF(Schedule!$H:$H,A3)</f></c>
+      <c r="E3"><f>SUMIF(Schedule!$B:$B,A3,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A3,Schedule!$F:$F)</f></c>
+      <c r="F3"><f>SUMIF(Schedule!$B:$B,A3,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A3,Schedule!$E:$E)</f></c>
+      <c r="G3"><v>50000</v></c>
+      <c r="H3">
+        <f>G3 - SUMIF(Players!$C:$C,A3,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="4">
+      <c r="A4" t="inlineStr"><is><t>Charlie</t></is></c>
+      <c r="B4"><v>72</v></c>
+      <c r="C4"><f>COUNTIF(Schedule!$G:$G,A4)</f></c>
+      <c r="D4"><f>COUNTIF(Schedule!$H:$H,A4)</f></c>
+      <c r="E4"><f>SUMIF(Schedule!$B:$B,A4,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A4,Schedule!$F:$F)</f></c>
+      <c r="F4"><f>SUMIF(Schedule!$B:$B,A4,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A4,Schedule!$E:$E)</f></c>
+      <c r="G4"><v>50000</v></c>
+      <c r="H4">
+        <f>G4 - SUMIF(Players!$C:$C,A4,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="5">
+      <c r="A5" t="inlineStr"><is><t>Delta</t></is></c>
+      <c r="B5"><v>85</v></c>
+      <c r="C5"><f>COUNTIF(Schedule!$G:$G,A5)</f></c>
+      <c r="D5"><f>COUNTIF(Schedule!$H:$H,A5)</f></c>
+      <c r="E5"><f>SUMIF(Schedule!$B:$B,A5,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A5,Schedule!$F:$F)</f></c>
+      <c r="F5"><f>SUMIF(Schedule!$B:$B,A5,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A5,Schedule!$E:$E)</f></c>
+      <c r="G5"><v>50000</v></c>
+      <c r="H5">
+        <f>G5 - SUMIF(Players!$C:$C,A5,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="6">
+      <c r="A6" t="inlineStr"><is><t>Echo</t></is></c>
+      <c r="B6"><v>68</v></c>
+      <c r="C6"><f>COUNTIF(Schedule!$G:$G,A6)</f></c>
+      <c r="D6"><f>COUNTIF(Schedule!$H:$H,A6)</f></c>
+      <c r="E6"><f>SUMIF(Schedule!$B:$B,A6,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A6,Schedule!$F:$F)</f></c>
+      <c r="F6"><f>SUMIF(Schedule!$B:$B,A6,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A6,Schedule!$E:$E)</f></c>
+      <c r="G6"><v>50000</v></c>
+      <c r="H6">
+        <f>G6 - SUMIF(Players!$C:$C,A6,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="7">
+      <c r="A7" t="inlineStr"><is><t>Foxtrot</t></is></c>
+      <c r="B7"><v>77</v></c>
+      <c r="C7"><f>COUNTIF(Schedule!$G:$G,A7)</f></c>
+      <c r="D7"><f>COUNTIF(Schedule!$H:$H,A7)</f></c>
+      <c r="E7"><f>SUMIF(Schedule!$B:$B,A7,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A7,Schedule!$F:$F)</f></c>
+      <c r="F7"><f>SUMIF(Schedule!$B:$B,A7,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A7,Schedule!$E:$E)</f></c>
+      <c r="G7"><v>50000</v></c>
+      <c r="H7">
+        <f>G7 - SUMIF(Players!$C:$C,A7,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="8">
+      <c r="A8" t="inlineStr"><is><t>Golf</t></is></c>
+      <c r="B8"><v>83</v></c>
+      <c r="C8"><f>COUNTIF(Schedule!$G:$G,A8)</f></c>
+      <c r="D8"><f>COUNTIF(Schedule!$H:$H,A8)</f></c>
+      <c r="E8"><f>SUMIF(Schedule!$B:$B,A8,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A8,Schedule!$F:$F)</f></c>
+      <c r="F8"><f>SUMIF(Schedule!$B:$B,A8,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A8,Schedule!$E:$E)</f></c>
+      <c r="G8"><v>50000</v></c>
+      <c r="H8">
+        <f>G8 - SUMIF(Players!$C:$C,A8,Players!$F:$F)</f>
+      </c>
+    </row>
+
+    <row r="9">
+      <c r="A9" t="inlineStr"><is><t>Hotel</t></is></c>
+      <c r="B9"><v>90</v></c>
+      <c r="C9"><f>COUNTIF(Schedule!$G:$G,A9)</f></c>
+      <c r="D9"><f>COUNTIF(Schedule!$H:$H,A9)</f></c>
+      <c r="E9"><f>SUMIF(Schedule!$B:$B,A9,Schedule!$E:$E)+SUMIF(Schedule!$C:$C,A9,Schedule!$F:$F)</f></c>
+      <c r="F9"><f>SUMIF(Schedule!$B:$B,A9,Schedule!$F:$F)+SUMIF(Schedule!$C:$C,A9,Schedule!$E:$E)</f></c>
+      <c r="G9"><v>50000</v></c>
+      <c r="H9">
+        <f>G9 - SUMIF(Players!$C:$C,A9,Players!$F:$F)</f>
+      </c>
+    </row>
+  </sheetData>
+  <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>
+</worksheet>
